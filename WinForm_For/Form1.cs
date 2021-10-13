@@ -15,6 +15,8 @@ namespace WinForm_For
         public Form1()
         {
             InitializeComponent();
+            txtx.Text = Properties.Settings.Default.x.ToString();
+            txty.Text = Properties.Settings.Default.y.ToString();
         }
         public class Logic
         {
@@ -34,6 +36,10 @@ namespace WinForm_For
             int x, y;
             x = int.Parse(this.txtx.Text);
             y = int.Parse(this.txty.Text);
+
+            Properties.Settings.Default.x = x;
+            Properties.Settings.Default.y = y;
+            Properties.Settings.Default.Save();
 
             MessageBox.Show("Произведение равно = " + Logic.Res(x, y));
         }

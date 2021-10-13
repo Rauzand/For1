@@ -22,5 +22,29 @@ namespace WinForm_For.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("7")]
+        public int x {
+            get {
+                return ((int)(this["x"]));
+            }
+            set {
+                this["x"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("12")]
+        public int y {
+            get {
+                return ((int)(this["y"]));
+            }
+            set {
+                this["y"] = value;
+            }
+        }
     }
 }
