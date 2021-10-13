@@ -31,7 +31,11 @@ namespace WinForm_For
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int x, y;
+            x = int.Parse(this.txtx.Text);
+            y = int.Parse(this.txty.Text);
 
+            MessageBox.Show("Произведение равно = " + Logic.Res(x, y));
         }
     }
 }
