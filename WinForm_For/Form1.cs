@@ -34,8 +34,28 @@ namespace WinForm_For
         private void button1_Click(object sender, EventArgs e)
         {
             int x, y;
-            x = int.Parse(this.txtx.Text);
-            y = int.Parse(this.txty.Text);
+            try
+            {
+                x = int.Parse(this.txtx.Text);
+                txtx.BackColor = Color.White;
+            }
+            catch (FormatException)
+            {
+                txtx.BackColor = Color.Red;
+                MessageBox.Show("Введено некоректное значение", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            try
+            {
+                y = int.Parse(this.txty.Text);
+                txty.BackColor = Color.White;
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Введено некоректное значение", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txty.BackColor = Color.Red;
+                return;
+            }
 
             Properties.Settings.Default.x = x;
             Properties.Settings.Default.y = y;
